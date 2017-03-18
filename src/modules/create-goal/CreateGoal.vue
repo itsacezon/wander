@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>Hi {{user.first_name}}!</h1>
-    <h2>Let's create your <span v-if="!hasGoals">first</span> travel goal</h2>
+    <h2 class="text-center">Let's create your <span v-if="!hasGoals">first</span> travel goal</h2>
 
-    <ul class="step">
+    <ul class="step my-20">
       <li :class="['step-item', { active: currentStep === 1 }]">
         <a>Pick a city</a>
       </li>
@@ -11,7 +10,7 @@
         <a>Choose activities</a>
       </li>
       <li :class="['step-item', { active: currentStep === 3 }]">
-        <a>Select flights</a>
+        <a>Your flight</a>
       </li>
     </ul>
 
@@ -33,7 +32,6 @@ export default {
   data () {
     return {
       currentStep: 1,
-      user: {},
       prop: {}
     }
   },
@@ -42,10 +40,6 @@ export default {
       this.currentStep = nextStep
       this.prop = prop
     }
-  },
-  created () {
-    var session = JSON.parse(localStorage.getItem('wander-session'))
-    this.user = session.user
   },
   components: {
     'step-1': Step1,

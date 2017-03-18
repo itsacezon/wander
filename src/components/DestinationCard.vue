@@ -1,5 +1,5 @@
 <template>
-  <div class="card card-3" @click="chooseDestination">
+  <div class="card card-3 card-hover" @click="chooseDestination">
     <div class="card-header">
       <h4 class="card-title">{{ destination.name }}</h4>
     </div>
@@ -7,7 +7,7 @@
       class="card-image"
       :style="{
         'background-image': 'url(' + destination.photo + ')',
-        height: '100px'
+        height: '160px'
       }">
     </div>
   </div>

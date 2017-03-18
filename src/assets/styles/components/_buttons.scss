@@ -143,6 +143,16 @@
       font-size: 2rem;
     }
   }
+
+  &.btn-facebook {
+    background-color: #3C5D96;
+    border-color: darken(#3C5D96, 10%);
+
+    &:hover {
+      background-color: darken(#3C5D96, 10%);
+      border-color: darken(#3C5D96, 10%);
+    }
+  }
 }
 
 // Button groups

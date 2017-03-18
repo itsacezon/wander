@@ -1,18 +1,20 @@
 <template>
   <div>
-    <h3>The best flights for you</h3>
-
     <div v-if="isFetching" class="loading"></div>
     <div v-else-if="!isFetching && hasFlights">
-      <button @click="shareGoal()">SHARE</button>
+      <div class="text-center share-travel-goal">
+        <button class="btn btn-primary btn-facebook btn-lg" @click="shareGoal()">Share my travel goal</button>
+      </div>
+
       <flight-card
         v-for="f in flights"
         :flight="f"
+        :photo="imageUrl"
       ></flight-card>
     </div>
-    <div v-else>
-      <h1>NO FLIGHTS</h1>
-      <button @click="getFlights()">Find again</button>
+    <div v-else class="text-center mt-20">
+      <h1>No flights available.</h1>
+      <button class="btn btn-primary btn-lg" @click="getFlights()">Find again</button>
     </div>
 
   </div>
@@ -122,3 +124,9 @@ export default {
   }
 }
 </script>
+
+<style>
+.share-travel-goal {
+  margin: 48px 0;
+}
+</style>

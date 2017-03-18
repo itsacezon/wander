@@ -8,33 +8,45 @@
           </a>
         </section>
         <section class="navbar-section">
-          <button class="btn" @click="logout()">Logout</button>
+          <a class="navbar-link" href="#" @click="logout()">Logout</a>
         </section>
       </div>
     </header>
 
     <div class="container container-main">
-      <div class="row">
-        <div class="three columns">
-          <sidebar></sidebar>
-        </div>
-        <div class="nine columns">
-          <create-goal></create-goal>
-        </div>
+      <div class="text-center">
+        <img class="circular" :src="profilePhoto" />
+        <h1>Hello, {{ firstName }}!</h1>
       </div>
+
+      <create-goal></create-goal>
     </div>
   </div>
 </template>
 
 <script>
-import Sidebar from '../components/Sidebar.vue'
 import CreateGoal from '../modules/create-goal/CreateGoal.vue'
 
 export default {
   name: 'Home',
   components: {
-    'sidebar': Sidebar,
     'create-goal': CreateGoal
+  },
+  data () {
+    return {
+      profileId: '',
+      firstName: ''
+    }
+  },
+  computed: {
+    profilePhoto () {
+      return 'https://graph.facebook.com/' + this.profileId + '/picture?width=128&height=128'
+    }
+  },
+  created () {
+    var session = JSON.parse(localStorage.getItem('wander-session'))
+    this.profileId = session.user.id
+    this.firstName = session.user.first_name
   },
   methods: {
     logout () {
@@ -48,11 +60,12 @@ export default {
       this.$router.go('/')
     }
   }
+
 }
 </script>
 
 <style>
 .container-main {
-  padding-top: 24px;
+  padding: 24px 0 48px 0;
 }
 </style>

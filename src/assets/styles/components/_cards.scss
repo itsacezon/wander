@@ -3,7 +3,8 @@
   flex-wrap: wrap;
 
   .card {
-    margin: 0 6px 6px 0;
+    margin: 0 9px 9px 0;
+    overflow: hidden;
   }
 }
 
@@ -11,21 +12,26 @@
   background: #fff;
   border: .1rem solid $border-color;
   border-radius: $global-radius;
-  display: block;
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   text-align: left;
+  position: relative;
 
   .card-header,
   .card-body,
   .card-footer {
     padding: 1.5rem 1.5rem 0 1.5rem;
+    flex: 1 1 auto;
 
     &:last-child {
       padding-bottom: 1.5rem;
     }
   }
   .card-image {
+    flex: 0 0 auto;
+
     padding-top: 1.5rem;
     background-position: center;
     background-size: cover;
@@ -49,17 +55,67 @@
   .card-title {
     font-size: 2rem;
     line-height: 1.4;
+    margin-bottom: 12px;
+
+    font-weight: 500;
+    transition: 200ms;
   }
   .card-meta {
-    color: $light-grey;
+    color: $dark-grey;
     font-size: 1.3rem;
   }
 
+  .card-selected {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(#ec0, 0.35);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 88px;
+    color: $primary-color;
+  }
+
   &-3 {
-    width: calc(33% - 4px);
+    @media (#{$bp-larger-than-mobile}) {
+      width: calc(50% - 7px);
+    }
+    @media (#{$bp-larger-than-phablet}) {
+      width: calc(33% - 6px);
+    }
+
+    &:nth-child(2n) {
+      @media (#{$bp-larger-than-mobile}) {
+        margin-right: 0;
+      }
+      @media (#{$bp-larger-than-phablet}) {
+        margin-right: 9px;
+      }
+    }
 
     &:nth-child(3n) {
-      margin-right: 0;
+      @media (#{$bp-larger-than-phablet}) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &.card-hover {
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    &:hover .card-title {
+      color: $primary-color;
     }
   }
 }

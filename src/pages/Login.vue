@@ -1,12 +1,34 @@
 <template>
-  <div class="container">
-    <button @click="login">Login to Facebook</button>
+  <div>
+    <div class="landing">
+      <div v-for="b in backgrounds" :class="`landing-background bg-${b}`" :style="bgUrl(b)"></div>
+      <div class="landing-panel">
+        <div class="row">
+          <div class="landing-panel-left" :style="{ 'background-image': 'url(public/images/landing-login.jpg)' }"></div>
+          <div class="landing-panel-right">
+            <img src="http://www.airasia.com/Common/en-MY.v2/images/logo.png" />
+            <h2>Chase wonders through Wander with AirAsia.</h2>
+            <button class="btn btn-primary btn-facebook btn-lg" @click="login">Login via Facebook</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      backgrounds: [1, 2, 3, 4, 5]
+    }
+  },
   methods: {
+    bgUrl (id) {
+      return {
+        'background-image': 'url(public/images/landing/' + id + '.jpg)'
+      }
+    },
     login () {
       var vm = this
       FB.login(response => {

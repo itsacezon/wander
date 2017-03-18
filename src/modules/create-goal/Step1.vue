@@ -4,7 +4,11 @@
 
     <div v-if="!isFetching">
       <div class="cards">
-        <destination-card v-for="d in destinations" :destination="d" @click="chooseCity(d)"></destination-card>
+        <destination-card
+          v-for="d in destinations"
+          :destination="d"
+          @click="chooseCity(d)"
+        ></destination-card>
       </div>
     </div>
     <div class="loading" v-else></div>

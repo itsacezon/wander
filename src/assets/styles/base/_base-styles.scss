@@ -14,9 +14,6 @@ body {
   font-weight: 400;
   font-family: $font-family;
   color: $font-color;
-
-  -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 }
 
 // Links
@@ -41,4 +38,6 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
