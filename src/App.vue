@@ -6,6 +6,15 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  created () {
+    window.fbAsyncInit = () => {
+      FB.init({
+        appId      : '1276035242517697',
+        xfbml      : true,
+        version    : 'v2.8'
+      })
+    }
+  }
 }
 </script>

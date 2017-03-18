@@ -1,9 +1,11 @@
 <template>
-  <h1>Yay</h1>
+  <div>
+    <h3>The best flights for you</h3>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+
 }
 </script>
