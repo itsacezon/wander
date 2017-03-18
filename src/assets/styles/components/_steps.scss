@@ -32,7 +32,7 @@
 
       &::before {
         background: $primary-color;
-        border: .2rem solid $link-color;
+        border: .2rem solid $grey;
         border-radius: 50%;
         content: "";
         display: block;
@@ -49,14 +49,14 @@
     &.active {
       a {
         &::before {
-          background: $link-color;
+          background: $primary-color;
           border: .2rem solid $primary-color;
         }
       }
 
       & ~ .step-item {
         &::before {
-          background: $border-color;
+          background: $light-grey;
         }
 
         a {

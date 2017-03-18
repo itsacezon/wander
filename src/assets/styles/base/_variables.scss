@@ -10,11 +10,14 @@ $bp-larger-than-desktophd : "min-width: 1200px" !default;
 
 // Colors
 $light-grey: #e1e1e1 !default;
+$grey: #6B6A6A !default;
 $dark-grey: #333 !default;
-$primary-color: #33c3f0 !default;
+$primary-color: #f20000 !default;
+$light-primary-color: #FF3333 !default;
+$dark-primary-color: #BF0000 !default;
 $secondary-color: lighten($dark-grey, 13.5%) !default;
 $border-color: #bbb !default;
-$link-color: #1eaedb !default;
+$link-color: #BF0000 !default;
 $font-color: #222 !default;
 
 // Typography

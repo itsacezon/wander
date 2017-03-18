@@ -3,7 +3,6 @@
     <h3>Where do you want to go?</h3>
 
     <div v-if="!isFetching">
-      <h4>Popular among friends</h4>
       <div class="cards">
         <destination-card v-for="d in destinations" :destination="d" @click="chooseCity(d)"></destination-card>
       </div>
@@ -29,14 +28,20 @@ export default {
   },
   methods: {
     chooseCity (dest) {
+      localStorage.setItem('wander-current-destination', dest.id)
+      localStorage.setItem('wander-current-city-name', dest.name)
       this.$emit('choose-destination', 2, dest)
     }
   },
   created () {
     axios.get('https://lit-peak-56209.herokuapp.com/api/destinations/')
       .then(response => {
-        this.destinations = response.data
+        const { country, city, destinations } = response.data
+        this.destinations = destinations
         this.isFetching = false
+
+        localStorage.setItem('wander-current-city', city)
+        localStorage.setItem('wander-current-country', country)
       })
       .catch(error => {
         console.log(error)

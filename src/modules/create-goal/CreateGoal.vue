@@ -16,8 +16,8 @@
     </ul>
 
     <step-1 v-if="currentStep === 1" @choose-destination="changeStep"></step-1>
-    <step-2 v-if="currentStep === 2" :destination="props.step2" @choose-activities="changeStep"></step-2>
-    <step-3 v-if="currentStep === 3"></step-3>
+    <step-2 v-if="currentStep === 2" :destination="prop" @choose-activities="changeStep"></step-2>
+    <step-3 v-if="currentStep === 3" :activities="prop"></step-3>
   </div>
 </template>
 
@@ -25,8 +25,6 @@
 import Step1 from './Step1.vue'
 import Step2 from './Step2.vue'
 import Step3 from './Step3.vue'
-
-// @click="currentStep = 1"
 
 export default {
   props: [
@@ -36,16 +34,13 @@ export default {
     return {
       currentStep: 1,
       user: {},
-      props: {
-        step2: {},
-        step3: {}
-      }
+      prop: {}
     }
   },
   methods: {
     changeStep (nextStep, prop) {
       this.currentStep = nextStep
-      this.props[`step${nextStep}`] = prop
+      this.prop = prop
     }
   },
   created () {

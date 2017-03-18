@@ -3,7 +3,6 @@
     <h3>What do you want to do in {{ destination.name }}?</h3>
 
     <div v-if="!isFetching">
-      <h4>Popular among friends</h4>
       <div class="cards">
         <activity-card
           v-for="a in activityRanks"
@@ -31,7 +30,7 @@ export default {
   data () {
     return {
       activityRanks: [],
-      activityItems: [],
+      activityItems: {},
       chosenActivities: [],
       isFetching: true
     }
@@ -49,16 +48,16 @@ export default {
   watch: {
     chosenActivities (newArray) {
       if (newArray.length === 3) {
-        // const activities = newArray.map(id => ({
-        //   ...activityItems
-        // }))
-        this.$emit('choose-activities', 3, newArray)
+        const activities = newArray.map(id => ({
+          ...this.activityItems[id]
+        }))
+        this.$emit('choose-activities', 3, activities)
       }
     }
   },
   created () {
     var session = JSON.parse(localStorage.getItem('wander-session'))
-    axios.post('http://52.40.229.152:3000/things2do', {
+    axios.post('http://52.221.203.194:3000/things2do', {
       city: this.destination.id,
     	age: session.user.age_range.min.toString(),
     	like: session.user.likes
