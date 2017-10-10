@@ -17,3 +17,6 @@ This product was an entry to AirAsia's Airvolution 2017 held in their headquarte
 - Sohyun Kim
 - Andie Rabino • [Github](https://github.com/heyandie)
 - Acezon Cay (me)
+
+## Credits
+- Unsplash (for the background images)
