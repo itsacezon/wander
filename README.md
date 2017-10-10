@@ -6,6 +6,8 @@ Wander aims to facilitate airline ticket sales by allowing users to create their
 
 This product was an entry to AirAsia's Airvolution 2017 held in their headquarters at KLIA2, Selangor, Malaysia.
 
+**Hackathon Pitch Deck**: [PDF](/public/pitch.pdf)
+
 ## Running the Vue app
 1. Install the dependencies by running `npm install`.
 2. To watch the app for changes, run `gulp watch`. Otherwise, use `gulp` to build the app.
