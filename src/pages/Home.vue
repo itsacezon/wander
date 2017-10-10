@@ -4,7 +4,7 @@
       <div class="container">
         <section class="navbar-primary">
           <a href="/" class="navbar-brand mr-10">
-            <img src="public/images/logo.png" height="64" /> <span>/</span> <span class="navbar-brand-name">wander</span>
+            <img src="public/images/logo.png" height="40" /> <span>/</span> <span class="navbar-brand-name">wander</span>
           </a>
         </section>
         <section class="navbar-section">

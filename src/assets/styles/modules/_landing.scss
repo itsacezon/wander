@@ -52,15 +52,16 @@
 
 .landing-background {
   position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
+  top: -12px;
+  right: -12px;
+  left: -12px;
+  bottom: -12px;
 
   background-size: cover;
   background-position: center;
 
   filter: blur(5px);
+  z-index: -1;
 
   @for $i from 1 through 5 {
     &.bg-#{$i} {
