@@ -13,6 +13,10 @@ This product was an entry to AirAsia's Airvolution 2017 held in their headquarte
 2. To watch the app for changes, run `gulp watch`. Otherwise, use `gulp` to build the app.
 3. Then, run the app: `python server.py` (a simple script to serve the index.html file)
 
+## Notes
+- The data fetching is a bit all over the place; we're still planning to re-do the code to clean up the mess.
+- Maybe we can add more login options (right now, only Facebook is available)
+
 ## Members (Team Airborne)
 - Christine Balili • [Github](https://github.com/christinebalili)
 - Susik Yoon • [Github](https://github.com/susikyoon)
